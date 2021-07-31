@@ -11,6 +11,6 @@ const rootReducer = combineReducers({
     firebase:firebaseReducer,
     contactSection:contactReducer,
     educationSection:educationReducer,
-    documentSection:documentReducer,
+    document:documentReducer,
 })
 export default rootReducer;
