@@ -27,9 +27,9 @@ function Education(props) {
   const onSubmit = async(e) => {
     //console.log(this.state.educationSection);
     if(props.educationSection!=null){
-        props.updateEducation(props.document.id,education);
+        props.updateEducation(education);
     }else{
-        props.addEducation(props.document.id,education);
+        props.addEducation(education);
     }
      history.push('/finalize')
   }
