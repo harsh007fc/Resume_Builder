@@ -59,7 +59,7 @@ export const registerFailed = (error) => {
     }
 }
 
-export const register = () => {
+export const register = (userData) => {
     return(dispatch,{getFirebase,getFirestore}) => {
 
         dispatch(registerRequest());
