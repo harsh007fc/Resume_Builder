@@ -85,4 +85,4 @@ const mapDispatchToProps= (dispatch)=>{
    signOut:()=>dispatch(authActions.signout())
   }
 }
-export default Header;
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

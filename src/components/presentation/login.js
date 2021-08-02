@@ -3,7 +3,7 @@ import update from 'immutability-helper';
 import { connect } from "react-redux";
 // import {bindActionCreators} from 'redux';
 import * as authActions from '../../Actions/AuthActions';
-// import { isLoaded } from 'react-redux-firebase'
+import { isLoaded } from 'react-redux-firebase'
 import { useHistory } from "react-router";
 
   function Login(props) {
@@ -32,7 +32,7 @@ const handlePassword=(e)=>{
 
     return (
       <>
-      {/* If we visit the login being signed in we will be unable to see the form */}
+       {!isLoaded(props.authFirebase)?<></>:
       <>
       {props.authMine?.loading?<h4 style={{marginTop:'10%',height:'52vh'}}>Patiently Wait...we are logging you in</h4>:
           <div className="container med contact">
@@ -62,7 +62,7 @@ const handlePassword=(e)=>{
         </div>
   }
   </>
-  
+  }
         </>
     );
   }

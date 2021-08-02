@@ -26,7 +26,8 @@ export const removeError = () => {
 }
 
 export const signIn = (userData) => {
-    return async(dispatch,{getFirebase,getFirestore})=>{
+    return async(dispatch,getState,obj)=>{
+        const {getFirebase,getFirestore} = obj;
         dispatch(signInRequest())
         const firebase = getFirebase();
         try{
@@ -60,7 +61,7 @@ export const registerFailed = (error) => {
 }
 
 export const register = (userData) => {
-    return(dispatch,{getFirebase,getFirestore}) => {
+    return(dispatch,getState,{getFirebase,getFirestore}) => {
 
         dispatch(registerRequest());
         const firebase = getFirebase();
@@ -80,7 +81,7 @@ export const register = (userData) => {
 }
 
 export const signout = () =>{
-    return(dispatch,{getFirebase,getFirestore})=>{
+    return(dispatch,getState,{getFirebase,getFirestore})=>{
         const firebase = getFirebase();
         firebase.auth().signOut().then(()=>{
             dispatch({type:actionsTypes.SIGN_OUT})
